@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import {
     FaEnvelope,
-    FaPhoneAlt,
     FaMapMarkerAlt,
     FaFacebookF,
     FaLinkedinIn,
     FaGithub,
+    FaGlobe,
 } from "react-icons/fa";
 import Header from "../Components/Header";
 
@@ -32,10 +32,10 @@ const Contact = () => {
 
         <div className="">
             <div className=" pt-10">
-            <Header
-                subtitle={'Want to talk to me?'}
-                title={'Lets Contact'}
-            ></Header>
+                <Header
+                    subtitle={'Want to talk to me?'}
+                    title={'Lets Contact'}
+                ></Header>
             </div>
             <section className="min-h-screen flex items-center justify-center bg-white px-6">
                 <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2">
@@ -55,23 +55,25 @@ const Contact = () => {
                                     href="mailto:youremail@example.com"
                                     className="text-gray-200 hover:text-blue-300 transition duration-300"
                                 >
-                                    youremail@example.com
+                                    mdmuhibullahhabib6348@gmail.com
                                 </a>
                             </div>
 
                             <div className="flex items-center space-x-4">
-                                <FaPhoneAlt className="text-blue-400 text-xl" />
+                                <FaGlobe className="text-blue-400 text-xl" />
                                 <a
-                                    href="tel:+880123456789"
-                                    className="text-gray-200 hover:text-blue-300 transition duration-300"
+                                    href="https://yourwebsite.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-200 hover:underline"
                                 >
-                                    +880 1234 56789
+                                    yourwebsite.com
                                 </a>
                             </div>
 
                             <div className="flex items-center space-x-4">
                                 <FaMapMarkerAlt className="text-blue-400 text-xl" />
-                                <span className="text-gray-200">Daffodil International University, Dhaka, Bangladesh</span>
+                                <span className="text-gray-200"> Dhaka, Bangladesh</span>
                             </div>
                         </div>
 
