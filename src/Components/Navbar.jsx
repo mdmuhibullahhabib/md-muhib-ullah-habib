@@ -1,20 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const links = ["about", "skills", "projects", "contact"];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="fixed w-full z-50 bg-[#0f2027] text-white shadow-lg px-10">
+    <header
+      className={`fixed w-full z-50 text-white shadow-lg px-10 transition-colors duration-300 ${
+        scrolled ? "bg-[#0f2027cc]" : "bg-[#0f2027]"
+      }`}
+    >
       <div className="max-w-screen-xl mx-auto flex justify-between items-center px-6 py-4">
-        
         {/* Dynamic Logo */}
-        <Link href="#home" className="leading-tight">
-          <div className="text-sm tracking-wide text-gray-300">
-            Md. Muhib Ullah
-          </div>
+        <Link to="#home" className="leading-tight">
+          <div className="text-sm tracking-wide text-gray-300">Md. Muhib Ullah</div>
           <div className="text-2xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
             Habib
           </div>

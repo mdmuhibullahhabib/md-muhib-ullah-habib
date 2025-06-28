@@ -122,7 +122,7 @@ const Home = () => {
           </div>
           <div className="flex justify-center md:justify-end">
             <img
-              src="/about-illustration.svg"
+              src="https://i.ibb.co/FqW9hqTB/Chat-GPT-Image-Jun-28-2025-04-12-13-PM.png"
               alt="About Illustration"
               className="w-full max-w-sm rounded-2xl shadow-lg"
             />
@@ -131,12 +131,15 @@ const Home = () => {
       </section>
 
       {/* Featured Projects */}
-      <section id="featured-projects" className="py-20 bg-gray-50">
+          <section id="featured-projects" className="py-20 bg-gradient-to-br from-[#e0f7fa] via-[#f1f8e9] to-[#fce4ec]">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center text-blue-700 mb-10">Featured Projects</h2>
+          <p className="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
+            Explore a curated list of my favorite projects, showcasing advanced UI design, real-world APIs, Firebase authentication, and seamless backend integrations. Each one is a unique challenge solved with care.
+          </p>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+              <div key={i} className="bg-white p-6 rounded-xl shadow hover:shadow-2xl transition">
                 <h3 className="text-xl font-semibold text-blue-600">Project Title {i}</h3>
                 <p className="text-gray-600 mt-2 text-sm">
                   A brief 100-letter description about your best project, explaining what it solves or does.
@@ -154,32 +157,56 @@ const Home = () => {
       </section>
 
       {/* Resume / Experience */}
-      <section className="py-20 bg-white text-gray-800">
-        <div className="max-w-4xl mx-auto px-6 space-y-6">
+        <section className="py-20 bg-gradient-to-tr from-[#ede7f6] via-[#e3f2fd] to-[#e0f7fa] text-gray-800">
+        <div className="max-w-4xl mx-auto px-6 space-y-10">
           <h2 className="text-4xl font-bold text-center text-blue-700">Experience & Education</h2>
           <div className="space-y-4">
-            <div>
+            <div className="bg-white p-4 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold">Software Engineering — Daffodil International University</h3>
               <p className="text-sm text-gray-600">2021 – Present</p>
+              <p className="text-sm text-gray-600 mt-1">
+                Gaining hands-on experience in software development, team collaboration, and agile practices while contributing to academic and personal projects.
+              </p>
             </div>
-            <div>
+            <div className="bg-white p-4 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold">Freelance Full Stack Developer</h3>
               <p className="text-sm text-gray-600">2022 – Present | Remote</p>
+              <p className="text-sm text-gray-600 mt-1">
+                Built web platforms for clients with real-time features, dashboards, secure auth, and optimized performance across devices.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Contact CTA */}
-      <section className="py-20 bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-center">
-        <h2 className="text-4xl font-bold mb-4">Have a Project in Mind?</h2>
-        <p className="mb-6">I’m available for freelance work, internships, and collaborations.</p>
-        <Link
-          href="contact"
-          className="inline-block px-6 py-3 bg-white text-blue-700 font-semibold rounded hover:bg-blue-100 transition"
-        >
-          Let’s Talk
-        </Link>
+      <section className="py-24 bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-center">
+        <div className="max-w-4xl mx-auto px-6 space-y-8">
+          <h2 className="text-4xl font-bold">Let’s Build Something Great Together!</h2>
+          <p className="text-lg text-blue-100">
+            I'm always open to discussing product design work, partnerships, and freelance opportunities. Whether you have a question or just want to say hi — I’ll try my best to get back to you!
+          </p>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="#contact"
+              className="inline-block px-8 py-3 bg-white text-blue-700 font-semibold rounded hover:bg-blue-100 transition"
+            >
+              Let’s Talk
+            </a>
+            <a
+              href="mailto:your.email@example.com"
+              className="inline-block px-8 py-3 border border-white text-white font-semibold rounded hover:bg-white hover:text-blue-700 transition"
+            >
+              Send Email
+            </a>
+          </div>
+
+          <div className="mt-10 text-sm text-blue-200">
+            <p>Currently based in Dhaka, Bangladesh — working remotely worldwide 🌍</p>
+            <p className="mt-1">Available: Mon - Fri, 9:00 AM to 6:00 PM</p>
+          </div>
+        </div>
       </section>
     </>
   );
