@@ -157,27 +157,40 @@ const Home = () => {
       </section>
 
       {/* Resume / Experience */}
-        <section className="py-20 bg-gradient-to-tr from-[#ede7f6] via-[#e3f2fd] to-[#e0f7fa] text-gray-800">
-        <div className="max-w-4xl mx-auto px-6 space-y-10">
-          <h2 className="text-4xl font-bold text-center text-blue-700">Experience & Education</h2>
-          <div className="space-y-4">
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold">Software Engineering — Daffodil International University</h3>
-              <p className="text-sm text-gray-600">2021 – Present</p>
-              <p className="text-sm text-gray-600 mt-1">
-                Gaining hands-on experience in software development, team collaboration, and agile practices while contributing to academic and personal projects.
-              </p>
-            </div>
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold">Freelance Full Stack Developer</h3>
-              <p className="text-sm text-gray-600">2022 – Present | Remote</p>
-              <p className="text-sm text-gray-600 mt-1">
-                Built web platforms for clients with real-time features, dashboards, secure auth, and optimized performance across devices.
-              </p>
-            </div>
-          </div>
+      <section className="py-20 bg-gradient-to-tr from-[#ede7f6] via-[#e3f2fd] to-[#e0f7fa] text-gray-800">
+  <div className="max-w-6xl mx-auto px-6">
+    <h2 className="text-4xl font-bold text-center text-blue-700 mb-12">Experience & Education</h2>
+
+    <div className="grid md:grid-cols-2 gap-10">
+      {/* Education */}
+      <div className="space-y-6">
+        <h3 className="text-2xl font-semibold text-blue-600 border-b pb-2">🎓 Education</h3>
+
+        <div className="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+          <h4 className="text-lg font-semibold">BSc in Software Engineering</h4>
+          <p className="text-sm text-gray-600">Daffodil International University · 2021 – Present</p>
+          <p className="text-sm text-gray-700 mt-2">
+            Core focus on full-stack development, software design patterns, agile methodology, and real-world project implementation.
+          </p>
         </div>
-      </section>
+      </div>
+
+      {/* Experience */}
+      <div className="space-y-6">
+        <h3 className="text-2xl font-semibold text-blue-600 border-b pb-2">💼 Experience</h3>
+
+        <div className="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+          <h4 className="text-lg font-semibold">Freelance Full Stack Developer</h4>
+          <p className="text-sm text-gray-600">Remote · 2022 – Present</p>
+          <p className="text-sm text-gray-700 mt-2">
+            Delivered web apps using React, Node.js, and MongoDB. Specialized in authentication, RESTful APIs, and responsive UI/UX.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Contact CTA */}
       <section className="py-24 bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-center">
@@ -188,14 +201,14 @@ const Home = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="inline-block px-8 py-3 bg-white text-blue-700 font-semibold rounded hover:bg-blue-100 transition"
             >
               Let’s Talk
-            </a>
+            </Link>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:mdmuhibullahhabib6348.com"
               className="inline-block px-8 py-3 border border-white text-white font-semibold rounded hover:bg-white hover:text-blue-700 transition"
             >
               Send Email

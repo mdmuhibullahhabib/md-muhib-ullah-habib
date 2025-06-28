@@ -32,7 +32,7 @@ const Navbar = () => {
     >
       <div className="max-w-screen-xl mx-auto flex justify-between items-center px-6 py-4">
         {/* Dynamic Logo */}
-        <Link to="#home" className="leading-tight">
+        <Link to="/" className="leading-tight">
           <div className="text-sm tracking-wide text-gray-300">Md. Muhib Ullah</div>
           <div className="text-2xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
             Habib
