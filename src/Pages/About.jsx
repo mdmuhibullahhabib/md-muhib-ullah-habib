@@ -33,7 +33,7 @@ const About = () => {
             className="md:w-1/3 bg-gray-900 bg-opacity-30 backdrop-blur-md rounded-3xl p-8 shadow-lg"
           >
             <img
-              src={'https://randomuser.me/api/portraits/women/45.jpg'}
+              src={'https://i.ibb.co/6ckgwLJj/Md-Muhib-Ullah-Habib.jpg'}
               alt="Md. Muhib Ullah Habib"
               className="rounded-2xl mb-6 w-full object-cover border border-cyan-500"
             />

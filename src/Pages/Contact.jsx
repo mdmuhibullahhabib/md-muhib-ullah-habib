@@ -31,7 +31,7 @@ const Contact = () => {
     return (
 
         <div className="">
-            <div className=" pt-26">
+            <div className=" pt-10">
             <Header
                 subtitle={'Want to talk to me?'}
                 title={'Lets Contact'}
