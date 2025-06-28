@@ -8,25 +8,35 @@ import {
     FaGlobe,
 } from "react-icons/fa";
 import Header from "../Components/Header";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-    });
-    const [submitted, setSubmitted] = useState(false);
 
-    const handleChange = (e) =>
-        setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async e => {
         e.preventDefault();
-        setSubmitted(true);
-        setFormData({ name: "", email: "", subject: "", message: "" });
-        setTimeout(() => setSubmitted(false), 5000);
-    };
+        const form = e.target;
+
+        const name =form.name.value
+        const email =form.email.value
+        const subject =form.subject.value
+        const message =form.message.value
+
+        const messageData = {name, email, subject, message}
+        console.log(messageData)
+
+        const res = await axios.post('http://localhost:5000/message', messageData);
+        if (res.data.insertedId) {
+                console.log('add to database', res.data)
+          Swal.fire({
+            icon: 'success',
+            title: 'Message Sent!',
+            text: 'Thank you for your message.',
+            confirmButtonColor: '#3085d6'
+          });
+          form.reset();
+        }
+      } 
 
     return (
 
@@ -122,10 +132,8 @@ const Contact = () => {
                                 name="name"
                                 id="name"
                                 required
-                                value={formData.name}
-                                onChange={handleChange}
                                 className="block py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                placeholder=" "
+                                placeholder=""
                             />
                             <label
                                 htmlFor="name"
@@ -142,8 +150,6 @@ const Contact = () => {
                                 name="email"
                                 id="email"
                                 required
-                                value={formData.email}
-                                onChange={handleChange}
                                 className="block py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                 placeholder=" "
                             />
@@ -161,8 +167,6 @@ const Contact = () => {
                                 type="text"
                                 name="subject"
                                 id="subject"
-                                value={formData.subject}
-                                onChange={handleChange}
                                 className="block py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                 placeholder=" "
                             />
@@ -181,8 +185,6 @@ const Contact = () => {
                                 id="message"
                                 rows="4"
                                 required
-                                value={formData.message}
-                                onChange={handleChange}
                                 className="block py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 resize-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                 placeholder=" "
                             ></textarea>
@@ -200,12 +202,6 @@ const Contact = () => {
                         >
                             Send Message
                         </button>
-
-                        {submitted && (
-                            <p className="text-green-600 mt-6 text-center font-semibold animate-fadeIn">
-                                Thank you! Your message has been sent.
-                            </p>
-                        )}
                     </form>
                 </div>
             </section>

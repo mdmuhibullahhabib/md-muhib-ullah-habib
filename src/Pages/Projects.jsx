@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { FaGithub, FaExternalLinkAlt, FaCalendarAlt, FaTools } from "react-icons/fa";
+import {
+  FaGithub,
+  FaExternalLinkAlt,
+  FaCalendarAlt,
+  FaTools,
+} from "react-icons/fa";
 
 const projects = [
   {
@@ -106,9 +111,9 @@ const Projects = () => {
   });
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 px-6 md:px-16 py-20 text-gray-800">
+    <section className="min-h-screen bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] text-white px-6 md:px-16 py-20">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-5xl font-bold text-center mb-12 text-blue-900 tracking-wide">
+        <h2 className="text-5xl font-bold text-center mb-12 text-cyan-300 tracking-wide">
           🚀 Featured Projects
         </h2>
 
@@ -119,24 +124,24 @@ const Projects = () => {
             placeholder="Search projects..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full sm:w-80 px-5 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
+            className="w-full sm:w-80 px-5 py-3 rounded-md bg-white/10 border border-white/20 backdrop-blur text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
           />
 
           <select
             value={selectedTech}
             onChange={(e) => setSelectedTech(e.target.value)}
-            className="w-full sm:w-56 px-5 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
+            className="w-full sm:w-56 px-5 py-3 rounded-md bg-gradient border border-white/20 backdrop-blur text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
           >
             <option>All</option>
             {allTechs.map((tech) => (
-              <option key={tech}>{tech}</option>
+              <option key={tech} className="text-black">{tech}</option>
             ))}
           </select>
         </div>
 
-        {/* Projects Grid */}
+        {/* Project Cards */}
         {filteredProjects.length === 0 ? (
-          <p className="text-center text-gray-500 text-lg mt-20">
+          <p className="text-center text-gray-300 text-lg mt-20">
             No projects found matching your criteria.
           </p>
         ) : (
@@ -144,7 +149,7 @@ const Projects = () => {
             {filteredProjects.map((project, index) => (
               <div
                 key={index}
-                className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl hover:scale-[1.04] transform transition duration-300"
+                className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-xl hover:shadow-cyan-500/20 hover:scale-[1.03] transition duration-300"
               >
                 <img
                   src={project.image}
@@ -153,46 +158,44 @@ const Projects = () => {
                   loading="lazy"
                 />
 
-                <div className="p-8 space-y-5">
+                <div className="p-6 space-y-4">
                   <div>
-                    <h3 className="text-2xl font-semibold text-blue-800">
+                    <h3 className="text-2xl font-bold text-cyan-300">
                       {project.title}
                     </h3>
-                    <p className="text-indigo-600 italic text-sm mt-1">
-                      {project.subtitle}
-                    </p>
+                    <p className="text-cyan-100 italic text-sm">{project.subtitle}</p>
                   </div>
 
-                  <p className="text-gray-700 leading-relaxed">{project.description}</p>
+                  <p className="text-gray-200 text-sm">{project.description}</p>
 
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold"
+                        className="bg-cyan-800/40 text-cyan-100 px-3 py-1 rounded-full text-xs font-medium"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  <div className="flex justify-between items-center mt-6 text-gray-600 text-sm">
+                  <div className="flex justify-between text-sm text-gray-300 pt-2">
                     <div className="flex items-center gap-2">
-                      <FaCalendarAlt />
+                      <FaCalendarAlt className="text-cyan-400" />
                       <span>{project.date}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <FaTools />
+                      <FaTools className="text-cyan-400" />
                       <span>{project.role}</span>
                     </div>
                   </div>
 
-                  <div className="flex justify-between items-center mt-6">
+                  <div className="flex justify-between items-center pt-4">
                     <a
                       href={project.live}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1 text-blue-600 font-semibold hover:text-blue-800 transition"
+                      className="inline-flex items-center gap-1 text-cyan-300 hover:text-white transition"
                     >
                       Live Demo <FaExternalLinkAlt />
                     </a>
@@ -201,10 +204,10 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-gray-600 hover:text-gray-900 transition"
                       title="GitHub Repository"
+                      className="text-cyan-200 hover:text-white transition text-2xl"
                     >
-                      <FaGithub className="text-3xl" />
+                      <FaGithub />
                     </a>
                   </div>
                 </div>
