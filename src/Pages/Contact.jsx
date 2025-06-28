@@ -17,26 +17,26 @@ const Contact = () => {
         e.preventDefault();
         const form = e.target;
 
-        const name =form.name.value
-        const email =form.email.value
-        const subject =form.subject.value
-        const message =form.message.value
+        const name = form.name.value
+        const email = form.email.value
+        const subject = form.subject.value
+        const message = form.message.value
 
-        const messageData = {name, email, subject, message}
+        const messageData = { name, email, subject, message }
         console.log(messageData)
 
-        const res = await axios.post('http://localhost:5000/message', messageData);
+        const res = await axios.post('https://md-muhib-ullah-habib-server.vercel.app/message', messageData);
         if (res.data.insertedId) {
-                console.log('add to database', res.data)
-          Swal.fire({
-            icon: 'success',
-            title: 'Message Sent!',
-            text: 'Thank you for your message.',
-            confirmButtonColor: '#3085d6'
-          });
-          form.reset();
+            console.log('add to database', res.data)
+            Swal.fire({
+                icon: 'success',
+                title: 'Message Sent!',
+                text: 'Thank you for your message.',
+                confirmButtonColor: '#3085d6'
+            });
+            form.reset();
         }
-      } 
+    }
 
     return (
 
@@ -47,11 +47,12 @@ const Contact = () => {
                     title={'Lets Contact'}
                 ></Header>
             </div>
-            <section className="min-h-screen flex items-center justify-center bg-white px-6">
-                <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2">
+            <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] px-4 sm:px-6 py-16">
+                <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-0">
+
                     {/* Left Side */}
-                    <div className="flex flex-col justify-center max-w-md mx-auto md:mx-0 bg-gray-900 rounded-xl p-10  shadow-lg text-gray-100 space-y-8 border border-gray-700">
-                        <h1 className="text-5xl font-extrabold tracking-tight text-white">
+                    <div className="flex flex-col justify-center max-w-md mx-auto md:mx-0 bg-white/5 backdrop-blur-xl rounded-xl p-10 shadow-2xl text-gray-100 space-y-8 border border-white/10">
+                        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
                             Get In Touch
                         </h1>
                         <p className="text-gray-300 text-lg leading-relaxed">
@@ -60,67 +61,63 @@ const Contact = () => {
 
                         <div className="space-y-6">
                             <div className="flex items-center space-x-4">
-                                <FaEnvelope className="text-blue-400 text-xl" />
+                                <FaEnvelope className="text-cyan-400 text-xl" />
                                 <a
-                                    href="mailto:youremail@example.com"
-                                    className="text-gray-200 hover:text-blue-300 transition duration-300"
+                                    href="mailto:mdmuhibullahhabib6348@gmail.com"
+                                    className="text-gray-200 hover:text-cyan-300 transition duration-300"
                                 >
                                     mdmuhibullahhabib6348@gmail.com
                                 </a>
                             </div>
 
                             <div className="flex items-center space-x-4">
-                                <FaGlobe className="text-blue-400 text-xl" />
+                                <FaGlobe className="text-cyan-400 text-xl" />
                                 <a
                                     href="https://yourwebsite.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-gray-200 hover:underline"
+                                    className="text-gray-200 hover:text-cyan-300 transition duration-300"
                                 >
                                     yourwebsite.com
                                 </a>
                             </div>
 
                             <div className="flex items-center space-x-4">
-                                <FaMapMarkerAlt className="text-blue-400 text-xl" />
-                                <span className="text-gray-200"> Dhaka, Bangladesh</span>
+                                <FaMapMarkerAlt className="text-cyan-400 text-xl" />
+                                <span className="text-gray-200">Dhaka, Bangladesh</span>
                             </div>
                         </div>
 
-                        <div className="flex space-x-8 text-blue-400 text-2xl mt-10">
+                        <div className="flex space-x-8 text-cyan-400 text-2xl mt-10">
                             <a
-                                href="https://facebook.com"
+                                href="https://www.facebook.com/mdmuhibullah.habib"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="hover:text-blue-300 transition duration-300"
-                                aria-label="Facebook"
+                                className="hover:text-cyan-300 transition duration-300"
                             >
                                 <FaFacebookF />
                             </a>
                             <a
-                                href="https://linkedin.com"
+                                href="https://linkedin.com/in/muhibullah-habib-8b107a278"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="hover:text-blue-300 transition duration-300"
-                                aria-label="LinkedIn"
+                                className="hover:text-cyan-300 transition duration-300"
                             >
                                 <FaLinkedinIn />
                             </a>
                             <a
-                                href="https://github.com"
+                                href="https://github.com/mdmuhibullahhabib"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="hover:text-blue-300 transition duration-300"
-                                aria-label="GitHub"
+                                className="hover:text-cyan-300 transition duration-300"
                             >
                                 <FaGithub />
                             </a>
                         </div>
                     </div>
 
-
-                    {/* Right Side - Form */}
-                    <form
+                    {/* Right Side - Form (no change needed here, but you can also apply backdrop if desired) */}
+                   <form
                         onSubmit={handleSubmit}
                         className="bg-gray-50 rounded-lg shadow-lg p-10 max-w-md mx-auto w-full"
                         noValidate
