@@ -38,7 +38,7 @@ const Footer = () => {
             <FaLinkedinIn size={16} />
           </a>
           <a
-            href="https://github.com/yourprofile"
+            href="https://github.com/mdmuhibullahhabib"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
