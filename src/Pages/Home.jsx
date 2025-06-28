@@ -168,7 +168,7 @@ const Home = () => {
 
         <div className="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
           <h4 className="text-lg font-semibold">BSc in Software Engineering</h4>
-          <p className="text-sm text-gray-600">Daffodil International University · 2021 – Present</p>
+          <p className="text-sm text-gray-600">Daffodil International University · 2023 – Present</p>
           <p className="text-sm text-gray-700 mt-2">
             Core focus on full-stack development, software design patterns, agile methodology, and real-world project implementation.
           </p>
@@ -181,7 +181,7 @@ const Home = () => {
 
         <div className="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
           <h4 className="text-lg font-semibold">Freelance Full Stack Developer</h4>
-          <p className="text-sm text-gray-600">Remote · 2022 – Present</p>
+          <p className="text-sm text-gray-600">Remote · 2024 – Present</p>
           <p className="text-sm text-gray-700 mt-2">
             Delivered web apps using React, Node.js, and MongoDB. Specialized in authentication, RESTful APIs, and responsive UI/UX.
           </p>
