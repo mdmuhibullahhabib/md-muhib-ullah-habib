@@ -12,4 +12,4 @@ const Header = ({subtitle, title}) => {
     )
 }
 
-export default Header
+export default Header;
