@@ -40,12 +40,12 @@ const Footer = () => {
         </div>
 
         <a
-          href="https://yourwebsite.com"
+          href="https://mdmuhibullahhabib.netlify.app"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-400 hover:underline"
         >
-          yourwebsite.com
+          www.mdmuhibullahhabib.com
         </a>
       </div>
     </footer>

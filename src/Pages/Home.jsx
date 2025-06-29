@@ -65,12 +65,12 @@ const Home = () => {
               >
                 Download CV
               </a>
-              <a
-                href="#contact"
+              <Link
+                to="contact"
                 className="px-6 py-2 rounded-md border border-cyan-400 hover:bg-cyan-600 transition text-cyan-400 hover:text-white font-semibold"
               >
                 Contact Me
-              </a>
+              </Link>
             </div>
 
             <div className="mt-10 text-cyan-400 animate-bounce cursor-pointer">

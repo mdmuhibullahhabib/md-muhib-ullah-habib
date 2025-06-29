@@ -5,6 +5,7 @@ import {
   FaPython, FaFire, FaDatabase, FaCode, FaTerminal, FaBug,
   FaLinux, FaComments, FaLightbulb, FaUsers, FaClock,
 } from "react-icons/fa";
+import { SiDaisyui, SiTailwindcss } from "react-icons/si";
 
 const skillSections = [
   {
@@ -15,6 +16,8 @@ const skillSections = [
       { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
       { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
       { name: "CSS3", icon: <FaCss3Alt className="text-blue-500" /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400 text-3xl" /> },
+      { name: "DaisyUI", icon: <SiDaisyui className="text-purple-400 text-3xl" /> },
     ],
   },
   {

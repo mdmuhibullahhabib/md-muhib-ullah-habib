@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import {
   FaGithub,
@@ -7,95 +8,37 @@ import {
   FaTools,
 } from "react-icons/fa";
 
-const projects = [
-  {
-    title: "Lingo Bingo",
-    subtitle: "Language Learning App",
-    description: `An interactive vocabulary learning platform designed to help users expand their Japanese language skills through engaging bingo-style games. Includes spaced repetition and progress tracking.`,
-    tech: ["React", "Firebase", "Tailwind CSS", "Google Auth"],
-    image: "/images/lingo-bingo.png",
-    live: "https://cholo-bangladesh-a12c4.web.app/",
-    github: "https://github.com/yourusername/lingo-bingo",
-    date: "April 2024",
-    role: "Full Stack Developer",
-  },
-  {
-    title: "HASHI Dental",
-    subtitle: "Dental Clinic Website",
-    description: `A responsive and modern website for a dental clinic featuring expert doctor profiles, appointment booking, service overviews, and patient testimonials with a clean UI and smooth animations.`,
-    tech: ["React", "Tailwind", "Vite", "React Router"],
-    image: "/images/hashi-dental.png",
-    live: "https://your-hashi-link.com",
-    github: "https://github.com/yourusername/hashi-dental",
-    date: "January 2024",
-    role: "Frontend Developer",
-  },
-  {
-    title: "GitHub Analytics",
-    subtitle: "Developer Stats Dashboard",
-    description: `A dashboard that visualizes GitHub data such as contributions, pull requests, stars, and issues by integrating GitHub API. Designed to give developers actionable insights on their work.`,
-    tech: ["Next.js", "Chart.js", "DaisyUI", "API Integration"],
-    image: "/images/github-analytics.png",
-    live: "https://your-github-analytics.com",
-    github: "https://github.com/yourusername/github-analytics",
-    date: "March 2024",
-    role: "Full Stack Developer",
-  },
-  {
-    title: "Personal Portfolio",
-    subtitle: "My Developer Portfolio",
-    description: `My personal portfolio website showcasing projects, skills, blog posts, and contact information. Features dark/light mode toggle and smooth page transitions for enhanced UX.`,
-    tech: ["React", "Tailwind CSS", "Framer Motion", "React Router"],
-    image: "/images/portfolio.png",
-    live: "https://your-portfolio-link.com",
-    github: "https://github.com/yourusername/portfolio",
-    date: "February 2024",
-    role: "Full Stack Developer",
-  },
-  {
-    title: "Task Manager",
-    subtitle: "Productivity App",
-    description: `A task management tool with scheduling, notifications, and task categorization to boost productivity. Includes real-time data sync and mobile-friendly UI.`,
-    tech: ["Vue", "Firebase", "Vuetify"],
-    image: "/images/task-manager.png",
-    live: "https://your-task-manager-link.com",
-    github: "https://github.com/yourusername/task-manager",
-    date: "December 2023",
-    role: "Frontend Developer",
-  },
-  {
-    title: "Blog Platform",
-    subtitle: "Content Publishing CMS",
-    description: `A scalable blogging platform with markdown support, user authentication, and rich text editing. Designed for easy content management and SEO optimization.`,
-    tech: ["Next.js", "GraphQL", "Tailwind CSS"],
-    image: "/images/blog-platform.png",
-    live: "https://your-blog-platform.com",
-    github: "https://github.com/yourusername/blog-platform",
-    date: "November 2023",
-    role: "Full Stack Developer",
-  },
-];
 
-const allTechs = [
-  "React",
-  "Firebase",
-  "Tailwind CSS",
-  "Next.js",
-  "Vue",
-  "Chart.js",
-  "DaisyUI",
-  "Framer Motion",
-  "Vuetify",
-  "GraphQL",
-  "Vite",
-  "Google Auth",
-  "API Integration",
-  "React Router",
-];
 
 const Projects = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTech, setSelectedTech] = useState("All");
+
+  const [projects, setprojects] = useState([]);
+  const [techs, setTechs] = useState([]);
+
+  // projects
+useEffect(() => {
+  axios.get("https://md-muhib-ullah-habib-server.vercel.app/projects")
+    .then((res) => {
+      setprojects(res.data);
+    })
+    .catch((err) => {
+      // console.error("Error fetching projects:", err);
+    });
+}, []);
+
+// all tech
+useEffect(() => {
+  axios.get("https://md-muhib-ullah-habib-server.vercel.app/techs")
+    .then((res) => {
+      setTechs(res.data);
+    })
+    .catch((err) => {
+      // console.error("Error fetching techs:", err);
+    });
+}, []);
+
 
   const filteredProjects = projects.filter((project) => {
     const matchesSearch =
@@ -138,8 +81,8 @@ const Projects = () => {
               className="w-full sm:w-56 px-5 py-3 rounded-md bg-gradient border border-white/20 backdrop-blur text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
             >
               <option>All</option>
-              {allTechs.map((tech) => (
-                <option key={tech} className="text-black">{tech}</option>
+              {techs.map((tech) => (
+                <option key={tech.name} className="text-black">{tech.name}</option>
               ))}
             </select>
           </div>

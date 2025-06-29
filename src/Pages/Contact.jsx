@@ -70,12 +70,12 @@ const Contact = () => {
                             <div className="flex items-center space-x-4">
                                 <FaGlobe className="text-cyan-400 text-xl" />
                                 <a
-                                    href="https://yourwebsite.com"
+                                    href="https://mdmuhibullahhabib.netlify.app"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-gray-200 hover:text-cyan-300 transition duration-300"
                                 >
-                                    yourwebsite.com
+                                    www.mdmuhibullahhabib.com
                                 </a>
                             </div>
 
