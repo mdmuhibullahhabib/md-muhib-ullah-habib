@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import {
   FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaFigma, FaJs,
   FaPython, FaFire, FaDatabase, FaCode, FaTools, FaTerminal, FaBug,
@@ -53,41 +54,46 @@ const skillSections = [
 
 const Skills = () => {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] px-6 md:px-20 py-20 text-white">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-5xl font-bold text-center mb-8 text-cyan-300 tracking-wide">
-          💼 My Skillset
-        </h2>
+    <>
+      <Helmet>
+        <title>Skills - Md. Muhib Ullah Habib</title>
+      </Helmet>
+      <section className="min-h-screen bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] px-6 md:px-20 py-20 text-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl font-bold text-center mb-8 text-cyan-300 tracking-wide">
+            💼 My Skillset
+          </h2>
 
-        <p className="text-center text-lg max-w-3xl mx-auto text-gray-300 mb-16">
-          I’m a full-stack developer passionate about building clean, user-friendly web applications.
-          With a focus on scalable design and strong grasp of both frontend and backend technologies,
-          I aim to deliver impactful solutions. Here’s a breakdown of my core technical and soft skills.
-        </p>
+          <p className="text-center text-lg max-w-3xl mx-auto text-gray-300 mb-16">
+            I’m a full-stack developer passionate about building clean, user-friendly web applications.
+            With a focus on scalable design and strong grasp of both frontend and backend technologies,
+            I aim to deliver impactful solutions. Here’s a breakdown of my core technical and soft skills.
+          </p>
 
-        {skillSections.map((section, i) => (
-          <div key={i} className="mb-20">
-            <div className="mb-6">
-              <h3 className="text-3xl font-semibold text-cyan-200">{section.title}</h3>
-              <p className="text-gray-300 mt-2">{section.description}</p>
+          {skillSections.map((section, i) => (
+            <div key={i} className="mb-20">
+              <div className="mb-6">
+                <h3 className="text-3xl font-semibold text-cyan-200">{section.title}</h3>
+                <p className="text-gray-300 mt-2">{section.description}</p>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                {section.skills.map((skill, index) => (
+                  <div
+                    key={index}
+                    title={skill.name}
+                    className="group flex flex-col items-center p-5 bg-white/10 rounded-xl shadow-xl hover:shadow-cyan-400/40 hover:scale-105 transition duration-300 backdrop-blur"
+                  >
+                    <div className="text-4xl mb-2 group-hover:scale-110 transition">{skill.icon}</div>
+                    <span className="text-md font-medium text-gray-200">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-              {section.skills.map((skill, index) => (
-                <div
-                  key={index}
-                  title={skill.name}
-                  className="group flex flex-col items-center p-5 bg-white/10 rounded-xl shadow-xl hover:shadow-cyan-400/40 hover:scale-105 transition duration-300 backdrop-blur"
-                >
-                  <div className="text-4xl mb-2 group-hover:scale-110 transition">{skill.icon}</div>
-                  <span className="text-md font-medium text-gray-200">{skill.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 
