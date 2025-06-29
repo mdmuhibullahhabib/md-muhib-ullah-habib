@@ -42,7 +42,7 @@ const Contact = () => {
     return (
         <>
             <Helmet>
-                <title>About Me | Md. Muhib Ullah Habib</title>
+                <title>Contact - Md. Muhib Ullah Habib</title>
             </Helmet>
             <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] px-4 sm:px-6 py-16">
                 <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-0">

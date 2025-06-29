@@ -114,7 +114,7 @@ const Projects = () => {
   return (
     <>
       <Helmet>
-        <title>About Me | Md. Muhib Ullah Habib</title>
+        <title>Projects - Md. Muhib Ullah Habib</title>
       </Helmet>
       <section className="min-h-screen bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] text-white px-6 md:px-16 py-20">
         <div className="max-w-7xl mx-auto">
