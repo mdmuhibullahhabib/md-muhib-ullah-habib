@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import {
   FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaFigma, FaJs,
-  FaPython, FaFire, FaDatabase, FaCode, FaTools, FaTerminal, FaBug,
+  FaPython, FaFire, FaDatabase, FaCode, FaTerminal, FaBug,
   FaLinux, FaComments, FaLightbulb, FaUsers, FaClock,
 } from "react-icons/fa";
 
