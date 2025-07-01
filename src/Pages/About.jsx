@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-// import profile from "../assets/your-photo.jpg"; // Replace with your image path
 import { FaReact, FaNodeJs, FaDatabase, FaGitAlt, FaHtml5, FaCss3Alt } from "react-icons/fa";
 import { SiTailwindcss, SiJavascript, SiMongodb, SiFirebase } from "react-icons/si";
 import { Helmet } from "react-helmet-async";
