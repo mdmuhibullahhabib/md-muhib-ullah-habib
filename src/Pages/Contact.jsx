@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
     FaEnvelope,
     FaMapMarkerAlt,
@@ -7,7 +7,6 @@ import {
     FaGithub,
     FaGlobe,
 } from "react-icons/fa";
-import Header from "../Components/Header";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
@@ -95,7 +94,7 @@ const Contact = () => {
                                 <FaFacebookF />
                             </a>
                             <a
-                                href="https://linkedin.com/in/muhibullah-habib-8b107a278"
+                                href="https://linkedin.com/in/mdmuhibullahhabib"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="hover:text-cyan-300 transition duration-300"

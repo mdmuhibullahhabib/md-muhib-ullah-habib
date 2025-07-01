@@ -20,7 +20,7 @@ const Footer = () => {
             <FaFacebookF size={16} />
           </a>
           <a
-            href="https://linkedin.com/in/muhibullah-habib-8b107a278"
+            href="https://linkedin.com/in/mdmuhibullahhabib"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
