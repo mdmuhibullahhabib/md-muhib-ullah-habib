@@ -8,6 +8,7 @@ import {
   FaGlobe,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const scrollToSection = (id) => {
   const element = document.getElementById(id);
@@ -17,6 +18,22 @@ const scrollToSection = (id) => {
 };
 
 const Home = () => {
+
+   const [Featured, setFeatured] = useState([]);
+  
+    // projects
+  useEffect(() => {
+    axios.get("https://md-muhib-ullah-habib-server.vercel.app/featured")
+      .then((res) => {
+        setFeatured(res.data);
+      })
+      .catch((err) => {
+        // console.error("Error fetching projects:", err);
+      });
+  }, []);
+
+
+
   return (
     <>
       {/* Hero Section */}
