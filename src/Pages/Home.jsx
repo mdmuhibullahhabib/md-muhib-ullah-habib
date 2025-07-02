@@ -155,14 +155,14 @@ const Home = () => {
             Explore a curated list of my favorite projects, showcasing advanced UI design, real-world APIs, Firebase authentication, and seamless backend integrations. Each one is a unique challenge solved with care.
           </p>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {Featured?.map((i) => (
+            {Featured?.map((fea) => (
               <div key={i} className="bg-white p-6 rounded-xl shadow hover:shadow-2xl transition">
-                <h3 className="text-xl font-semibold text-blue-600">Project Title {i}</h3>
+                <h3 className="text-xl font-semibold text-blue-600">{fea.projectName}</h3>
                 <p className="text-gray-600 mt-2 text-sm">
-                  A brief 100-letter description about your best project, explaining what it solves or does.
+                  {fea.description}
                 </p>
                 <a
-                  href="#"
+                  href={.githubLink}
                   className="inline-block mt-4 text-sm text-blue-500 hover:underline"
                 >
                   View on GitHub →
