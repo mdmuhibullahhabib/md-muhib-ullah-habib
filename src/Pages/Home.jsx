@@ -162,7 +162,7 @@ const Home = () => {
                   {fea.description}
                 </p>
                 <a
-                  href={.githubLink}
+                  href={fea.githubLink}
                   className="inline-block mt-4 text-sm text-blue-500 hover:underline"
                 >
                   View on GitHub →
