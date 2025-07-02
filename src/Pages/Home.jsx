@@ -156,7 +156,7 @@ const Home = () => {
           </p>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {Featured?.map((fea) => (
-              <div key={i} className="bg-white p-6 rounded-xl shadow hover:shadow-2xl transition">
+              <div key={fea._id} className="bg-white p-6 rounded-xl shadow hover:shadow-2xl transition">
                 <h3 className="text-xl font-semibold text-blue-600">{fea.projectName}</h3>
                 <p className="text-gray-600 mt-2 text-sm">
                   {fea.description}
