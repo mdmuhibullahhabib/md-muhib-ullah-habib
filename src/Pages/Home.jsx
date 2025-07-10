@@ -79,7 +79,7 @@ const Home = () => {
                 href="https://drive.google.com/uc?export=download&id=15Q2v_HxG7DW46WW97PXsQs3-OMPPcljm"
                 target="_blank"
                 rel="noreferrer"
-                className="px-6 py-2 rounded-md bg-cyan-500 hover:bg-cyan-600 transition text-white font-semibold"
+                className="inline-flex items-center gap-2 px-6 py-2 rounded-md bg-cyan-500 hover:bg-cyan-600 transition text-white font-semibold"
               >
                     <FaDownload />
                 Download Resume
