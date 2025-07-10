@@ -19,9 +19,9 @@ const scrollToSection = (id) => {
 
 const Home = () => {
 
-   const [Featured, setFeatured] = useState([]);
-  
-    // projects
+  const [Featured, setFeatured] = useState([]);
+
+  // projects
   useEffect(() => {
     axios.get("https://md-muhib-ullah-habib-server.vercel.app/featured")
       .then((res) => {
@@ -75,12 +75,12 @@ const Home = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center mt-6">
               <a
-                href="/your-resume.pdf"
+                href="https://drive.google.com/uc?export=download&id=15Q2v_HxG7DW46WW97PXsQs3-OMPPcljm"
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-2 rounded-md bg-cyan-500 hover:bg-cyan-600 transition text-white font-semibold"
               >
-                Download CV
+                Download Resume
               </a>
               <Link
                 to="contact"
@@ -148,7 +148,7 @@ const Home = () => {
       </section>
 
       {/* Featured Projects */}
-          <section id="featured-projects" className="py-20 bg-gradient-to-br from-[#e0f7fa] via-[#f1f8e9] to-[#fce4ec]">
+      <section id="featured-projects" className="py-20 bg-gradient-to-br from-[#e0f7fa] via-[#f1f8e9] to-[#fce4ec]">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center text-blue-700 mb-10">Featured Projects</h2>
           <p className="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
@@ -175,38 +175,38 @@ const Home = () => {
 
       {/* Resume / Experience */}
       <section className="py-20 bg-gradient-to-tr from-[#ede7f6] via-[#e3f2fd] to-[#e0f7fa] text-gray-800">
-  <div className="max-w-6xl mx-auto px-6">
-    <h2 className="text-4xl font-bold text-center text-blue-700 mb-12">Experience & Education</h2>
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center text-blue-700 mb-12">Experience & Education</h2>
 
-    <div className="grid md:grid-cols-2 gap-10">
-      {/* Education */}
-      <div className="space-y-6">
-        <h3 className="text-2xl font-semibold text-blue-600 border-b pb-2">🎓 Education</h3>
+          <div className="grid md:grid-cols-2 gap-10">
+            {/* Education */}
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-blue-600 border-b pb-2">🎓 Education</h3>
 
-        <div className="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
-          <h4 className="text-lg font-semibold">BSc in Software Engineering</h4>
-          <p className="text-sm text-gray-600">Daffodil International University · 2023 – Present</p>
-          <p className="text-sm text-gray-700 mt-2">
-            Core focus on full-stack development, software design patterns, agile methodology, and real-world project implementation.
-          </p>
+              <div className="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+                <h4 className="text-lg font-semibold">BSc in Software Engineering</h4>
+                <p className="text-sm text-gray-600">Daffodil International University · 2023 – Present</p>
+                <p className="text-sm text-gray-700 mt-2">
+                  Core focus on full-stack development, software design patterns, agile methodology, and real-world project implementation.
+                </p>
+              </div>
+            </div>
+
+            {/* Experience */}
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-blue-600 border-b pb-2">💼 Experience</h3>
+
+              <div className="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+                <h4 className="text-lg font-semibold">Freelance Full Stack Developer</h4>
+                <p className="text-sm text-gray-600">Remote · 2024 – Present</p>
+                <p className="text-sm text-gray-700 mt-2">
+                  Delivered web apps using React, Node.js, and MongoDB. Specialized in authentication, RESTful APIs, and responsive UI/UX.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      {/* Experience */}
-      <div className="space-y-6">
-        <h3 className="text-2xl font-semibold text-blue-600 border-b pb-2">💼 Experience</h3>
-
-        <div className="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
-          <h4 className="text-lg font-semibold">Freelance Full Stack Developer</h4>
-          <p className="text-sm text-gray-600">Remote · 2024 – Present</p>
-          <p className="text-sm text-gray-700 mt-2">
-            Delivered web apps using React, Node.js, and MongoDB. Specialized in authentication, RESTful APIs, and responsive UI/UX.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
 
       {/* Contact CTA */}
