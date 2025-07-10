@@ -6,6 +6,7 @@ import {
   FaLaptopCode,
   FaToolbox,
   FaGlobe,
+  FaDownload,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -80,6 +81,7 @@ const Home = () => {
                 rel="noreferrer"
                 className="px-6 py-2 rounded-md bg-cyan-500 hover:bg-cyan-600 transition text-white font-semibold"
               >
+                    <FaDownload />
                 Download Resume
               </a>
               <Link
