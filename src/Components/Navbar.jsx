@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -9,20 +9,18 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Reusable styling function
+  const getLinkClasses = ({ isActive }) =>
+    `transition ${
+      isActive ? "text-cyan-400 border-b-2 border-cyan-400" : "hover:text-cyan-400"
+    }`;
 
   return (
     <header
@@ -31,20 +29,22 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-screen-xl mx-auto flex justify-between items-center px-6 py-4">
-        {/* Dynamic Logo */}
-        <Link to="/" className="leading-tight">
+        {/* Logo */}
+        <NavLink to="/" className="leading-tight">
           <div className="text-sm tracking-wide text-gray-300">Md. Muhib Ullah</div>
           <div className="text-2xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
             Habib
           </div>
           <p className="text-xs text-gray-400 mt-1">Full Stack Developer</p>
-        </Link>
+        </NavLink>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 uppercase text-sm font-medium">
           {links.map((link) => (
-            <li key={link} className="hover:text-cyan-400 transition">
-              <Link to={`${link}`}>{link}</Link>
+            <li key={link}>
+              <NavLink to={`/${link}`} className={getLinkClasses}>
+                {link}
+              </NavLink>
             </li>
           ))}
         </ul>
@@ -59,8 +59,10 @@ const Navbar = () => {
       {nav && (
         <ul className="md:hidden flex flex-col items-center bg-[#0f2027] py-6 space-y-6 uppercase font-semibold text-sm">
           {links.map((link) => (
-            <li key={link} onClick={() => setNav(false)} className="hover:text-cyan-400 transition">
-              <Link to={`${link}`}>{link}</Link>
+            <li key={link} onClick={() => setNav(false)}>
+              <NavLink to={`/${link}`} className={getLinkClasses}>
+                {link}
+              </NavLink>
             </li>
           ))}
         </ul>
