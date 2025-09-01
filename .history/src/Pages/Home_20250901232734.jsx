@@ -77,7 +77,8 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center mt-6">
               <a
               
-                href="https://drive.google.com/uc?export=download&id=1bHGqpId0Ey9rMSeWhZdajtL2I8jrVWfy"
+                href="https://drive.google.com/uc?export=download&id=1bHGqpId0Ey9rMSeWhZdajtL2I8jrVWfy
+"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-2 rounded-md bg-cyan-500 hover:bg-cyan-600 transition text-white font-semibold"
