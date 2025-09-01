@@ -5,7 +5,7 @@ import {
   FaPython, FaFire, FaDatabase, FaCode, FaTerminal, FaBug,
   FaLinux, FaComments, FaLightbulb, FaUsers, FaClock,
 } from "react-icons/fa";
-import { SiDaisyui, SiTailwindcss, SiNextdotjs, SiMysql  } from "react-icons/si";
+import { SiDaisyui, SiTailwindcss, SiNextdotjs  } from "react-icons/si";
 
 const skillSections = [
   {

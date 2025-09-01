@@ -5,16 +5,15 @@ import {
   FaPython, FaFire, FaDatabase, FaCode, FaTerminal, FaBug,
   FaLinux, FaComments, FaLightbulb, FaUsers, FaClock,
 } from "react-icons/fa";
-import { SiDaisyui, SiTailwindcss, SiNextdotjs, SiMysql  } from "react-icons/si";
+import { SiDaisyui, SiTailwindcss } from "react-icons/si";
 
 const skillSections = [
   {
     title: "Frontend Development",
     description: "Crafting modern, responsive, and performant user interfaces using cutting-edge technologies.",
     skills: [
-      { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
       { name: "React", icon: <FaReact className="text-cyan-400" /> },
-        { name: "Next.js", icon: <SiNextdotjs className="text-black text-3xl" /> },
+      { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
       { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
       { name: "CSS3", icon: <FaCss3Alt className="text-blue-500" /> },
       { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400 text-3xl" /> },
